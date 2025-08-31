@@ -4,13 +4,58 @@
     <meta charset="UTF-8">
     <title>Ae Test</title>
     <script src="main.js" type="application/javascript" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .wrapper {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #155ab6;
+        }
+        #content p {
+            font-size: 0.8em;
+            margin: 0.3em;
+        }
+        #content .bold {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+    </style>
 </head>
 <body>
 <div class="wrapper">
     <h1>Ae Test</h1>
     <p>This is a test page for Ae.</p>
     <a href="https://aristeusp.github.io/ae-test/" target="_blank">Example Link</a>
-    <button onclick="alert('Button clicked!')">Click Me</button>
+    <button>Click Me</button>
     <div id="content"></div>
 
 </div>
