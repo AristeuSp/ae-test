@@ -1,7 +1,10 @@
 // main.js
 // Cria o namespace se ainda não existir
+
 window.App = window.App || {};
 window.App.versao = "1.0.0";
+
+// Exemplo de uso de variáveis globais em um namespace dentro do objeto App e importado com <script src=main.js defer></script> no HTML
 
 // Adiciona variáveis globais organizadas
 window.App.config = {
@@ -17,6 +20,7 @@ window.App.utils = {
     frstLine: '',
     nextLines: '',
 };
+
 
 let counter = 0;
 let frstLine = '';
