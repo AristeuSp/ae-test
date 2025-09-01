@@ -1,27 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-// import PageAe from '../../components/PageAe.astro'; // Não é necessário importar o componente se estiver usando o caminho absoluto
 ---
 <head>
     <title>My First Script Page</title>
     <!--<script src="main.js" type="application/javascript" defer></script>-->
 </head>
-<!-- Layout contém o body -->
+<!-- Layout vem DIRETO do body -->
 <Layout>
-    <h1>Ae Test</h1>
-    <p>This is a test page for Ae.</p>
-    <a href="https://aristeusp.github.io/ae-test/" target="_blank">Example Link</a>
-    <button>Click Me</button>
-    <div id="content"></div>
-    <!-- Para entender esse import:-->
-    <!-- main.js está em '.static', estamos em root/first-script/ -->
-    <!-- E é NECESSÁRIO ainda diretiva 'is:inline' -->
-    <script is:inline src="../main.js" type="application/javascript" defer></script>
+    <div class="wrapper">
+        <h1>Ae Test</h1>
+        <p>This is a test page for Ae.</p>
+        <a href="https://aristeusp.github.io/ae-test/" target="_blank">Example Link</a>
+        <button>Click Me</button>
+        <div id="content"></div>
+        <!-- Para entender esse import:-->
+        <!-- main.js está em '.static', estamos em root/first-script/ -->
+        <!-- E é NECESSÁRIO ainda diretiva 'is:inline' -->
+        <script is:inline src="../main.js" type="application/javascript" defer></script>
+    </div>
 </Layout>
 <!-- Importante! sem a diretiva client:only pensa que é no servidor -->
 <!--<Script client:only />-->
-
-
 
 <style>
     body {
