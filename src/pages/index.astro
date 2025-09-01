@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
-// Supports weights 100-900
+import MyReactComponent from '../components/react/MyReactComponent'
+import MyComp from '../components/react/my-comp'
 
 import '../assets/styles/gb-fontsource.css'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -13,6 +14,9 @@ import '../assets/styles/gb-fontsource.css'
 <Layout>
     <div id="container">
         <main>
+            <nav id="navigation">
+                <MyReactComponent client:load />
+            </nav>
             <h1 class="noto-cnd">{SITE_TITLE}</h1>
             <div class="call-out noto-reg-italic">
                 <blockquote>{SITE_DESCRIPTION}</blockquote>
@@ -20,13 +24,17 @@ import '../assets/styles/gb-fontsource.css'
             <ul>
                 <li><a href="./first-script">First Script</a></li>
             </ul>
+
+            <MyComp client:load />
         </main>
     </div>
 </Layout>
 
 <style>
     // CSS Para Tags HTML no Layout
-
+    .avatar {
+        border-radius: 50%;
+    }
 
     main ul {
         padding-left: 0;
