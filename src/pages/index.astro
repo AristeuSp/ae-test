@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
+// Supports weights 100-900
+
+import '../assets/styles/gb-fontsource.css'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -10,8 +13,8 @@ import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
 <Layout>
     <div id="container">
         <main>
-            <h1>{SITE_TITLE}</h1>
-            <div class="call-out">
+            <h1 class="noto-cnd">{SITE_TITLE}</h1>
+            <div class="call-out noto-reg-italic">
                 <blockquote>{SITE_DESCRIPTION}</blockquote>
             </div>
             <ul>
@@ -22,30 +25,9 @@ import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
 </Layout>
 
 <style>
-    html,
-    body {
-        font-size: 16px;
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        box-sizing: border-box;
-        background-color: whitesmoke;
-    }
+    // CSS Para Tags HTML no Layout
 
-    *, *:before, *:after {
-        box-sizing: inherit;
-    }
 
-    #container {
-        max-width: 800px;
-        margin: auto;
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
     main ul {
         padding-left: 0;
         text-decoration: none;
@@ -57,40 +39,16 @@ import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
         text-align: center;
     }
 
-    h1, h2, h3, h4, h5, h6, p {
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.7em;
-    }
-
-    h3 {
-        font-size: 1.3em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
     .call-out {
         background: rgba(227, 227, 195, 0.1);
+        font-size: 1.3rem;
+        text-align: center;
         border-left: 8px solid #ccc;
         border-color: #1a73e8;
         margin: 1em auto 1em auto;
         padding: 10px;
         width: 80%;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    blockquote {
-
-        font-family: Serif;
-        font-style: italic;
     }
 
 

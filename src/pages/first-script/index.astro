@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import '../../assets/styles/gb-fontsource.css'
 ---
 <head>
     <title>My First Script Page</title>
@@ -7,8 +8,8 @@ import Layout from '../../layouts/Layout.astro';
 </head>
 <!-- Layout vem DIRETO do body -->
 <Layout>
-    <div class="wrapper">
-        <h1>Ae Test</h1>
+    <div class="wrapper roboto">
+        <h1 id="title">Ae Test</h1>
         <p>This is a test page for Ae.</p>
         <a href="https://aristeusp.github.io/ae-test/" target="_blank">Example Link</a>
         <button>Click Me</button>
@@ -24,11 +25,20 @@ import Layout from '../../layouts/Layout.astro';
 
 <style>
     body {
-        font-family: Arial, sans-serif;
         padding: 20px;
         background-color: #f0f0f0;
     }
+    #title {
+        font-family: "Noto Serif", serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+        font-variation-settings: "wdth" 87.5;
+    }
 
+    p {
+        line-height: 0.6em;
+    }
     .wrapper {
         max-width: 600px;
         margin: auto;
@@ -66,11 +76,11 @@ import Layout from '../../layouts/Layout.astro';
 
     #content p {
         font-size: 0.8em;
-        margin: 0.3em;
+        margin: 0;
     }
 
     #content .bold {
-        font-size: 1.2em;
+        font-size: 0.8em;
         font-weight: bold;
     }
 </style>

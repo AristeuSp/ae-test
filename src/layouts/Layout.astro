@@ -7,10 +7,14 @@ import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Noto+Serif:ital,wdth,wght@0,87.5,100..900;1,87.5,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">		<meta name="generator" content={Astro.generator} />
 		<title>{SITE_TITLE}</title>
+
 	</head>
 	<body>
 		<slot />
+
 	</body>
 </html>
