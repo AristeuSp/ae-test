@@ -1,8 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
-import MyReactComponent from '../components/react/MyReactComponent'
-import MyComp from '../components/react/my-comp'
+import MyComp from '../components/react/my-comp.jsx'
 
 import '../assets/styles/gb-fontsource.css'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -14,18 +13,17 @@ import '../assets/styles/gb-fontsource.css'
 <Layout>
     <div id="container">
         <main>
-            <nav id="navigation">
-                <MyReactComponent client:load />
-            </nav>
             <h1 class="noto-cnd">{SITE_TITLE}</h1>
             <div class="call-out noto-reg-italic">
                 <blockquote>{SITE_DESCRIPTION}</blockquote>
             </div>
             <ul>
                 <li><a href="./first-script">First Script</a></li>
+                <li><a href="/iso639?view=basic">Tabela (básica)</a></li>
+                <li><a href="/iso639?view=paginated">Tabela (paginada + ordenação)</a></li>
             </ul>
 
-            <MyComp client:load />
+            <MyComp client:load/>
         </main>
     </div>
 </Layout>
@@ -58,7 +56,6 @@ import '../assets/styles/gb-fontsource.css'
         width: 80%;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     }
-
 
 
 </style>
