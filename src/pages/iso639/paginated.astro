@@ -4,8 +4,12 @@ import {SITE_TITLE} from '../../consts';
 import '../../assets/styles/gb-fontsource.css';
 
 // importe as DUAS variações
-import BasicTableBasic from '../../components/react/test-tableview';
-// import BasicTablePaginated from '../../components/react/test-tableview-paginated';
+// import BasicTableBasic from '../../components/react/test-tableview';
+import BasicTablePaginated from '../../components/react/test-tableview-paginated';
+
+// leia o parâmetro ?view=basic|paginated
+const view = (Astro.url.searchParams.get('view') ?? 'paginated').toLowerCase();
+const isBasic = view === 'basic';
 ---
 <Layout>
     <div id="container">
@@ -18,7 +22,7 @@ import BasicTableBasic from '../../components/react/test-tableview';
             </div>
 
             <h2>Línguas</h2>
-            <BasicTableBasic client:load/>
+            <BasicTablePaginated client:load/>
         </main>
     </div>
 </Layout>
