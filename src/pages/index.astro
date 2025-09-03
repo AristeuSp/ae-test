@@ -24,6 +24,9 @@ import '../assets/styles/gb-fontsource.css'
             </ul>
 
             <MyComp client:load/>
+            <p>The current URL is: {Astro.url}</p>
+            <p>The current URL pathname is: {Astro.url.pathname}</p>
+            <p>The current URL origin is: {Astro.url.origin}</p>
         </main>
     </div>
 </Layout>
