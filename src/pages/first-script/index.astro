@@ -18,6 +18,9 @@ import '../../assets/styles/gb-fontsource.css'
         <!-- main.js está em '.static', estamos em root/first-script/ -->
         <!-- E é NECESSÁRIO ainda diretiva 'is:inline' -->
         <script is:inline src="../main.js" type="application/javascript" defer></script>
+        <p>The current URL is: {Astro.url}</p>
+        <p>The current URL pathname is: {Astro.url.pathname}</p>
+        <p>The current URL origin is: {Astro.url.origin}</p>
     </div>
 </Layout>
 <!-- Importante! sem a diretiva client:only pensa que é no servidor -->
