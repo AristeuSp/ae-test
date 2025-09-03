@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {SITE_TITLE, SITE_DESCRIPTION} from '../../consts';
+import '../../assets/styles/gb-fontsource.css'
+import GreetingHeadline from '../../components/GreetingHeadline.astro'
+const name = 'Aristeu'
+const greeting = 'Olá açaí!'
+---
+<head>
+    <title>Astro Stuff</title>
+    <!--<script src="main.js" type="application/javascript" defer></script>-->
+</head>
+<!-- Layout vem DIRETO do body -->
+<Layout>
+    <div id="container">
+        <main>
+            <h1>Astro Stuff</h1>
+            <div class="call-out noto-reg-italic">
+                <blockquote>{SITE_DESCRIPTION}</blockquote>
+            </div>
+            <GreetingHeadline greeting={greeting} name={name}/>
+        </main>
+    </div>
+</Layout>
+<!-- Importante! sem a diretiva client:only pensa que é no servidor -->
+<!--<Script client:only />-->
+
+<style>
+    main ul {
+        padding-left: 0;
+        text-decoration: none;
+    }
+
+    main ul li {
+        list-style: none;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .call-out {
+        background: rgba(227, 227, 195, 0.1);
+        font-size: 1.3rem;
+        text-align: center;
+        border-left: 8px solid #ccc;
+        border-color: #1a73e8;
+        margin: 1em auto 1em auto;
+        padding: 10px;
+        width: 80%;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
