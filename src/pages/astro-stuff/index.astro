@@ -1,24 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import {SITE_TITLE, SITE_DESCRIPTION} from '../../consts';
 import '../../assets/styles/gb-fontsource.css'
-import GreetingHeadline from '../../components/GreetingHeadline.astro'
-const name = 'Aristeu'
-const greeting = 'Olá açaí!'
+import Blockquote from '../../components/Blockquote.astro';
 ---
-<head>
-    <title>Astro Stuff</title>
-    <!--<script src="main.js" type="application/javascript" defer></script>-->
-</head>
-<!-- Layout vem DIRETO do body -->
-<Layout>
+
+<Layout title="Title desta página">
     <div id="container">
         <main>
+
             <h1>Astro Stuff</h1>
-            <div class="call-out noto-reg-italic">
-                <blockquote>{SITE_DESCRIPTION}</blockquote>
-            </div>
-            <GreetingHeadline greeting={greeting} name={name}/>
+            <!-- Adicionando classe extra -->
+            <Blockquote class="mt-4 shadow-lg">Citação com destaque</Blockquote>
+
+            <!-- Sem slot, usa o text default -->
+            <Blockquote />
+
+            <!-- Com atributos extras -->
+            <Blockquote id="quote-hero" data-variant="primary" aria-label="Mensagem importante">
+                Conteúdo rico com <strong>HTML</strong>
+            </Blockquote>
+
         </main>
     </div>
 </Layout>
@@ -37,7 +38,7 @@ const greeting = 'Olá açaí!'
         text-align: center;
     }
 
-    .call-out {
+    :global(.call-out) {
         background: rgba(227, 227, 195, 0.1);
         font-size: 1.3rem;
         text-align: center;

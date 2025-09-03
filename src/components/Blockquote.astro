@@ -1,0 +1,14 @@
+---
+export interface Props {
+    text?: string;
+    class?: string; // classes extras para mesclar
+}
+const { text= 'Desc padrão', class: extraClass = '', ...attrs } = Astro.props as Props;
+const classes = `call-out noto-reg-italic${extraClass ? ` ${extraClass}` : ''}`;
+
+---
+<div class={classes}>
+    <blockquote>
+        {Astro.slots.has('default') ? <slot /> : text}
+    </blockquote>
+</div>
