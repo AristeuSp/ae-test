@@ -1,3 +1,38 @@
 ---
-
+import Layout from '../layouts/Layout.astro'
+import Blockquote from '../components/Blockquote.astro'
 ---
+<Layout title="Página Vídeos">
+    <Blockquote>Versão Alpha</Blockquote>
+</Layout>
+
+<style>
+    .avatar {
+        border-radius: 50%;
+    }
+
+    main ul {
+        padding-left: 0;
+        text-decoration: none;
+    }
+
+    main ul li {
+        list-style: none;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    :global(.call-out) {
+        background: rgba(227, 227, 195, 0.1);
+        font-size: 1.3rem;
+        text-align: center;
+        border-left: 8px solid #ccc;
+        border-color: #1a73e8;
+        margin: 1em auto 1em auto;
+        padding: 10px;
+        width: 80%;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+
+</style>
