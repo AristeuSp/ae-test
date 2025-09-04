@@ -3,15 +3,41 @@ export interface Props {
     text?: string;
     ano?: number;
     class?: string; // classes extras para mesclar
-    folder?: string;
-}
-const { text= 'Título do Vídeo', ano= 1917, class: extraClass = '', folder='', ...attrs } = Astro.props as Props;
+    }
+const { text= 'Título do Vídeo', ano= 0, class: extraClass = '', folder='', ...attrs } = Astro.props as Props;
 const classes = `call-out noto-reg-italic${extraClass ? ` ${extraClass}` : ''}`;
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
 
 ---
 <div class={classes}>
-    <h1 class="nome">
-        {Astro.slots.has('default') ? <slot /> : text} ({ano})
+    <h1 id="nome">
+        {Astro.slots.has('default') ? <slot /> : text} ({String(ano).padStart(4, "0")})
     </h1>
-    <p class="folder">{folder}</p>
+    <p id="folder">
+        <span class="cap-first">{Astro.slots.has('default') ? <slot /> : text}</span> ({String(ano).padStart(4, "0")})
+    </p>
+
+
 </div>
+
+<style>
+    #nome {
+        font-size: 1em;
+        margin-bottom: 0.3em;
+    }
+    #folder {
+        font-size: 0.6em;
+        margin-top: 0;
+    }
+    /* Deixa tudo minúsculo e só a primeira letra maiúscula */
+    .cap-first {
+        display: inline-block;
+        text-transform: lowercase;
+    }
+    .cap-first::first-letter {
+        text-transform: uppercase;
+    }
+
+</style>
