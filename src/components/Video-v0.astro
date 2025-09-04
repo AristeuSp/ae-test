@@ -1,0 +1,17 @@
+---
+export interface Props {
+    text?: string;
+    ano?: number;
+    class?: string; // classes extras para mesclar
+    folder?: string;
+}
+const { text= 'Título do Vídeo', ano= 1917, class: extraClass = '', folder='', ...attrs } = Astro.props as Props;
+const classes = `call-out noto-reg-italic${extraClass ? ` ${extraClass}` : ''}`;
+
+---
+<div class={classes}>
+    <h1 class="nome">
+        {Astro.slots.has('default') ? <slot /> : text} ({ano})
+    </h1>
+    <p class="folder">{folder}</p>
+</div>
