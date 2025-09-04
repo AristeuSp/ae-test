@@ -5,9 +5,15 @@ import react from '@astrojs/react';
 
 import mdx from '@astrojs/mdx';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
-    site: "https://aristeusp.github.io/ae-test",
-    publicDir: './static',
-    integrations: [react(), mdx()]
+  site: "https://aristeusp.github.io/ae-test",
+  publicDir: './static',
+  integrations: [react(), mdx()],
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });

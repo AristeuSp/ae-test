@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import '../../assets/styles/gb-fontsource.css'
+import '../../styles/global.css'
+import '../../styles/gb-fontsource.css'
 import Blockquote from '../../components/Blockquote.astro';
 ---
 
@@ -13,7 +14,7 @@ import Blockquote from '../../components/Blockquote.astro';
             <Blockquote class="mt-4 shadow-lg">Citação com destaque</Blockquote>
 
             <!-- Sem slot, usa o text default -->
-            <Blockquote />
+            <Blockquote/>
 
             <!-- Com atributos extras -->
             <Blockquote id="quote-hero" data-variant="primary" aria-label="Mensagem importante">
